@@ -21,9 +21,9 @@ def carregar_contatos():
 
 def adicionar_contato():
     try:
-        input_nome_contato = input("Digite o nome do conntato: ")
-        input_telefone_contato = input("Digite o telefone do conntato: ")
-        input_email_contato = input("Digite o email do conntato: ")
+        input_nome_contato = input("Digite o nome do contato: ")
+        input_telefone_contato = input("Digite o telefone do contato: ")
+        input_email_contato = input("Digite o email do contato: ")
 
         contatos = {
             "nome": input_nome_contato,
@@ -50,9 +50,9 @@ def listar_contatos():
 
 def alterar_contato():
     try:
-        numero_contato = input("Digite o numero do contato que deseja alterar: ")
+        input_email_contato = input("Digite o email do contato que deseja alterar: ")
         for contato in agenda_contatos:
-            if contato['numero'] == numero_contato:
+            if contato['email'] == input_email_contato:
                 input_novo_nome = input("Digite o novo nome do contato: ")
                 input_novo_telefone = input("Digite o novo telefone do contato: ")
                 input_novo_email = input("Digite o novo email do contato: ")
@@ -61,34 +61,34 @@ def alterar_contato():
                 contato['telefone'] = input_novo_telefone
                 contato['email'] = input_novo_email
 
-                print(f"Contato '{numero_contato}' alterado com sucesso!")
+                print(f"Contato '{input_email_contato}' alterado com sucesso!")
                 return
             else:
-                print(f"Contato '{numero_contato}' não encontrado.")
+                print(f"Contato '{input_email_contato}' não encontrado.")
     except:
         print("Erro ao alterar o contato.")
 
 def buscar_contato():
     try:
-        numero_contato = input("Digite o numero do contato que deseja buscar: ")
+        input_email_contato = input("Digite o email do contato que deseja buscar: ")
         for contato in agenda_contatos:
-            if contato['numero'] == numero_contato:
+            if contato['email'] == input_email_contato:
                 print(f"Contato encontrado: Nome: {contato['nome']}, Telefone: {contato['telefone']}, Email: {contato['email']}")
                 return
-        print(f"Contato '{numero_contato}' não encontrado.")
+        print(f"Contato '{input_email_contato}' não encontrado.")
     except:
         print("Erro ao buscar o contato.")
 
 def excluir_contato():
     try:
-        numero_contato = input("Digite o numero do contato que deseja excluir: ")
+        input_email_contato = input("Digite o email do contato que deseja excluir: ")
         for contato in agenda_contatos:
-            if contato['numero'] == numero_contato:
+            if contato['email'] == input_email_contato:
                 agenda_contatos.remove(contato)
-                print(f"Contato '{numero_contato}' excluído com sucesso!")
+                print(f"Contato '{input_email_contato}' excluído com sucesso!")
                 return
             else:
-                print(f"Contato '{numero_contato}' não encontrado.")
+                print(f"Contato '{input_email_contato}' não encontrado.")
     except:
         print("Erro ao excluir o contato.")
 
